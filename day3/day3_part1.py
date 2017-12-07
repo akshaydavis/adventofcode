@@ -63,6 +63,6 @@ while i < target:
             incrementx = False
             newLayer = True
 
-#---------------------------------------#            
+#---------------------------------------#
 distance = abs(currentx) + abs(currenty)
 print("Day 3 Part 1: %d" % distance)
