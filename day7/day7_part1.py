@@ -1,4 +1,4 @@
-#------------------Day6-----------------#
+#------------------Day7-----------------#
 #------------------Info-----------------#
 # Event:    Advent of Code
 # Year:     2017
@@ -9,12 +9,12 @@
 # Solved by Akshay Davis
 
 #--------------Import Data--------------#
-# http://adventofcode.com/2017/day/6/input
+# http://adventofcode.com/2017/day/7/input
 import csv
 inputfile = "input.txt"
 
 #----------------Solution---------------#
-# http://adventofcode.com/2017/day/6
+# http://adventofcode.com/2017/day/7
 nodearray = []
 
 class Prognode():

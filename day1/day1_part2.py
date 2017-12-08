@@ -15,19 +15,9 @@ input = '81827597793116617842489265377993134215656726894684959794894446986381824
 #----------------Solution---------------#
 # http://adventofcode.com/2017/day/1
 
-def calcStringSum(inputstring):
-    i = 0
-    runningTot = 0
-    arrlen = len(inputstring)
-    
-    while i < arrlen:
-        comparePos = int((i + (arrlen/2))% arrlen)
-        if inputstring[comparePos] == inputstring[i]:
-            runningTot += int(inputstring[i])
-        i+=1
-    return(runningTot)
-
-result = calcStringSum(input)
+# For each character of the input check if it is the same as the character half way around the input string.
+# If it is, add it to the array and sum over the array
+result = sum([int(input[i]) for i in range(0, len(input)) if input[int((i + (len(input)/2))% len(input))] == input[i]])
 
 #---------------------------------------#
 print('Day 1 Part 2: %d' % result)

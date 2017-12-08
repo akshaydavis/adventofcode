@@ -15,21 +15,9 @@ input = '81827597793116617842489265377993134215656726894684959794894446986381824
 #----------------Solution---------------#
 # http://adventofcode.com/2017/day/1
 
-def calcStringSum(inputstring):
-    i = 1
-    runningTot = 0
-    firstChar = inputstring[0]
-    lastChar = inputstring[0]
-    while i < len(inputstring):
-        if lastChar == inputstring[i]:
-            runningTot += int(inputstring[i])
-        lastChar = inputstring[i]
-        i+=1
-    if firstChar == lastChar:
-        runningTot += int(lastChar)
-    return(runningTot)    
-
-result = calcStringSum(input)
+# For each character of the input check if it is the same as the previous.
+# If it is, add it to the array and sum over the array
+result = sum([int(input[i % len(input)]) for i in range(1,len(input) + 1) if input[(i-1) % len(input)] == input[i % len(input)]])
 
 #---------------------------------------#
 print('Day 1 Part 1: %d' % result)
