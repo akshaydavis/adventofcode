@@ -22,8 +22,7 @@ def calculateChecksum(filename):
         for line in csv.reader(tsv, dialect="excel-tab"):
             numericArr = [int(numeric_string) for numeric_string in line]
             numericArr.sort()
-            rowdiff = numericArr[len(numericArr) - 1] - numericArr[0]
-            checksum += rowdiff
+            checksum += numericArr[len(numericArr) - 1] - numericArr[0]
     return(checksum)
 
 result = calculateChecksum(inputFile)
