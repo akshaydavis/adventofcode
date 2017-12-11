@@ -26,7 +26,6 @@ def currentDistance():
 
 with open(inputfile) as f:
     steps = f.read().split(',')
-    #steps = input.split(',')
     for step in steps:
         coord = list(map(operator.add, coord, coordchange[step]))
                 
