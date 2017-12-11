@@ -10,6 +10,8 @@
 
 #--------------Import Data--------------#
 # http://adventofcode.com/2017/day/11/input
+import operator
+
 inputfile = "input.txt"
 
 #----------------Solution---------------#
@@ -23,12 +25,10 @@ def currentDistance():
     return int((abs(coord[0]) + abs(coord[1]) + abs(coord[2])) / 2)
 
 with open(inputfile) as f:
-    input = f.read()
-    steps = input.split(',')
+    steps = f.read().split(',')
+    #steps = input.split(',')
     for step in steps:
-        coord[0] += coordchange[step][0]
-        coord[1] += coordchange[step][1]
-        coord[2] += coordchange[step][2]
+        coord = list(map(operator.add, coord, coordchange[step]))
                 
         if maxDistance < currentDistance():
             maxDistance = currentDistance()
